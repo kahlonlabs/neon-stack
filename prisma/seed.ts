@@ -14,7 +14,7 @@ import { insertGitHubUser } from '#tests/mocks/github.ts'
 
 async function seed() {
   console.log('🌱 Seeding...')
-  console.time(`🌱 Database has been seeded`)
+  console.time('🌱 Database has been seeded')
 
   console.time('🧹 Cleaned up the database...')
   await cleanupDb(prisma)
@@ -62,7 +62,7 @@ async function seed() {
   console.timeEnd('👑 Created roles...')
 
   const totalUsers = 5
-  console.time(`👤 Created ${totalUsers} users...`)
+  console.time('👤 Created ${totalUsers} users...')
   const noteImages = await getNoteImages()
   const userImages = await getUserImages()
 
@@ -105,7 +105,7 @@ async function seed() {
   }
   console.timeEnd(`👤 Created ${totalUsers} users...`)
 
-  console.time(`🐨 Created admin user "kody"`)
+  console.time('🐨 Created admin user "kody"')
 
   const kodyImages = await promiseHash({
     kodyUser: img({ filepath: './tests/fixtures/images/user/kody.png' }),
@@ -255,9 +255,9 @@ async function seed() {
       },
     },
   })
-  console.timeEnd(`🐨 Created admin user "kody"`)
+  console.timeEnd('🐨 Created admin user "kody"')
 
-  console.timeEnd(`🌱 Database has been seeded`)
+  console.timeEnd('🌱 Database has been seeded')
 }
 
 seed()

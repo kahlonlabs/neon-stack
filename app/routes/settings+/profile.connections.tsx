@@ -170,7 +170,7 @@ function Connection({
   const icon = providerIcons[connection.providerName]
   return (
     <div className='flex justify-between gap-2'>
-      <span className={`inline-flex items-center gap-1.5`}>
+      <span className='inline-flex items-center gap-1.5'>
         {icon}
         <span>
           {connection.link ? (

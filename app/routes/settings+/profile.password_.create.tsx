@@ -74,7 +74,7 @@ export async function action({ request }: ActionFunctionArgs) {
     },
   })
 
-  return redirect(`/settings/profile`, { status: 302 })
+  return redirect('/settings/profile', { status: 302 })
 }
 
 export default function CreatePasswordRoute() {

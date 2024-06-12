@@ -88,7 +88,7 @@ export default async function main({ rootDirectory }) {
       console.error(error)
 
       console.error(
-        `Looks like something went wrong setting up deployment. Sorry about that. Check the docs for instructions on how to get deployment setup yourself (https://github.com/epicweb-dev/epic-stack/blob/main/docs/deployment.md).`,
+        'Looks like something went wrong setting up deployment. Sorry about that. Check the docs for instructions on how to get deployment setup yourself (https://github.com/epicweb-dev/epic-stack/blob/main/docs/deployment.md).',
       )
     })
   }
@@ -130,7 +130,7 @@ async function setupDeployment({ rootDirectory }) {
   )
   if (!hasFly) {
     console.log(
-      `You need to install Fly first. Follow the instructions here: https://fly.io/docs/hands-on/install-flyctl/`,
+      'You need to install Fly first. Follow the instructions here: https://fly.io/docs/hands-on/install-flyctl/',
     )
     return
   }
@@ -159,7 +159,7 @@ async function setupDeployment({ rootDirectory }) {
   await $I`fly apps create ${APP_NAME}-staging`
   await $I`fly apps create ${APP_NAME}`
 
-  console.log(`🤫 Setting secrets in apps`)
+  console.log('🤫 Setting secrets in apps')
   await $I`fly secrets set SESSION_SECRET=${getRandomString32()} INTERNAL_COMMAND_TOKEN=${getRandomString32()} HONEYPOT_SECRET=${getRandomString32()} ALLOW_INDEXING=false --app ${APP_NAME}-staging`
   await $I`fly secrets set SESSION_SECRET=${getRandomString32()} INTERNAL_COMMAND_TOKEN=${getRandomString32()} HONEYPOT_SECRET=${getRandomString32()} --app ${APP_NAME}`
 
@@ -170,7 +170,7 @@ async function setupDeployment({ rootDirectory }) {
   await $I`fly volumes create data --region ${primaryRegion} --size 1 --app ${APP_NAME}`
 
   // attach consul
-  console.log(`🔗 Attaching consul`)
+  console.log('🔗 Attaching consul')
   await $I`fly consul attach --app ${APP_NAME}-staging`
   await $I`fly consul attach --app ${APP_NAME}`
 
@@ -184,7 +184,7 @@ async function setupDeployment({ rootDirectory }) {
     },
   ])
   if (shouldDeploy) {
-    console.log(`🚀 Deploying apps...`)
+    console.log('🚀 Deploying apps...')
     console.log('  Moving Dockerfile and .dockerignore to root (temporarily)')
     await fs.rename(
       path.join(rootDirectory, 'other', 'Dockerfile'),
@@ -194,14 +194,14 @@ async function setupDeployment({ rootDirectory }) {
       path.join(rootDirectory, 'other', '.dockerignore'),
       path.join(rootDirectory, '.dockerignore'),
     )
-    console.log(`  Starting with staging`)
+    console.log('  Starting with staging')
     await $I`fly deploy --app ${APP_NAME}-staging`
     await open(`https://${APP_NAME}-staging.fly.dev/`)
 
-    console.log(`  Staging deployed... Deploying production...`)
+    console.log('  Staging deployed... Deploying production...')
     await $I`fly deploy --app ${APP_NAME}`
     await open(`https://${APP_NAME}.fly.dev/`)
-    console.log(`  Production deployed...`)
+    console.log('  Production deployed...')
     console.log('  Moving Dockerfile and .dockerignore back to other/')
     await fs.rename(
       path.join(rootDirectory, 'Dockerfile'),
@@ -222,15 +222,15 @@ async function setupDeployment({ rootDirectory }) {
     },
   ])
   if (shouldSetupGitHub) {
-    console.log(`⛓ Initializing git repo...`)
+    console.log('⛓ Initializing git repo...')
     // it's possible there's already a git repo initialized so we'll just ignore
     // any errors and hope things work out.
     await $I`git init`.catch(() => {})
 
     console.log(
-      `Opening repo.new. Please create a new repo and paste the URL below.`,
+      'Opening repo.new. Please create a new repo and paste the URL below.',
     )
-    await open(`https://repo.new`)
+    await open('https://repo.new')
 
     const { repoURL } = await inquirer.prompt([
       {
@@ -247,9 +247,9 @@ async function setupDeployment({ rootDirectory }) {
     }
 
     console.log(
-      `Opening Fly Tokens Dashboard and GitHub Action Secrets pages. Please create a new token on Fly and set it as the value for a new secret called FLY_API_TOKEN on GitHub.`,
+      'Opening Fly Tokens Dashboard and GitHub Action Secrets pages. Please create a new token on Fly and set it as the value for a new secret called FLY_API_TOKEN on GitHub.',
     )
-    await open(`https://web.fly.io/user/personal_access_tokens/new`)
+    await open('https://web.fly.io/user/personal_access_tokens/new')
     await open(`${repoURL}/settings/secrets/actions/new`)
 
     console.log(
@@ -287,7 +287,7 @@ async function ensureLoggedIn() {
       }
     }
   } else {
-    console.log(`You need to login to Fly first. Running \`fly auth login\`...`)
+    console.log('You need to login to Fly first. Running `fly auth login`...')
     await $({ stdio: 'inherit' })`fly auth login`
     return ensureLoggedIn()
   }
@@ -299,7 +299,7 @@ async function getPreferredRegion() {
   } = await makeFlyRequest({ query: 'query {platform {requestRegion}}' })
 
   const availableRegions = await makeFlyRequest({
-    query: `{platform {regions {name code}}}`,
+    query: '{platform {regions {name code}}}',
   })
   const { preferredRegion } = await inquirer.prompt([
     {

@@ -314,7 +314,7 @@ function SignOutOfSessions() {
           >
             <Icon name='avatar'>
               {dc.doubleCheck
-                ? `Are you sure?`
+                ? 'Are you sure?'
                 : `Sign out of ${otherSessionsCount} other sessions`}
             </Icon>
           </StatusButton>
@@ -352,7 +352,7 @@ function DeleteData() {
           status={fetcher.state !== 'idle' ? 'pending' : 'idle'}
         >
           <Icon name='trash'>
-            {dc.doubleCheck ? `Are you sure?` : `Delete all your data`}
+            {dc.doubleCheck ? 'Are you sure?' : 'Delete all your data'}
           </Icon>
         </StatusButton>
       </fetcher.Form>

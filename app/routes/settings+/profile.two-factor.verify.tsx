@@ -93,7 +93,7 @@ export async function action({ request }: ActionFunctionArgs) {
           ctx.addIssue({
             path: ['code'],
             code: z.ZodIssueCode.custom,
-            message: `Invalid code`,
+            message: 'Invalid code',
           })
           return z.NEVER
         }

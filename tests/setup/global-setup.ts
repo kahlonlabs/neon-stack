@@ -4,7 +4,7 @@ import fsExtra from 'fs-extra'
 
 export const BASE_DATABASE_PATH = path.join(
   process.cwd(),
-  `./tests/prisma/base.db`,
+  './tests/prisma/base.db',
 )
 
 export async function setup() {

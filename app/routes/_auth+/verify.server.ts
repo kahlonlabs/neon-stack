@@ -153,7 +153,7 @@ export async function validateRequest(
         ctx.addIssue({
           path: ['code'],
           code: z.ZodIssueCode.custom,
-          message: `Invalid code`,
+          message: 'Invalid code',
         })
         return
       }

@@ -39,7 +39,7 @@ test('Users can update their password', async ({ page, login }) => {
 
   await page.getByRole('button', { name: /^change password/i }).click()
 
-  await expect(page).toHaveURL(`/settings/profile`)
+  await expect(page).toHaveURL('/settings/profile')
 
   const { username } = user
   expect(
@@ -62,7 +62,7 @@ test('Users can update their profile photo', async ({ page, login }) => {
 
   await page.getByRole('link', { name: /change profile photo/i }).click()
 
-  await expect(page).toHaveURL(`/settings/profile/photo`)
+  await expect(page).toHaveURL('/settings/profile/photo')
 
   await page
     .getByRole('textbox', { name: /change/i })
@@ -73,7 +73,7 @@ test('Users can update their profile photo', async ({ page, login }) => {
   await expect(
     page,
     'Was not redirected after saving the profile photo',
-  ).toHaveURL(`/settings/profile`)
+  ).toHaveURL('/settings/profile')
 
   const afterSrc = await page
     .getByRole('img', { name: user.name ?? user.username })

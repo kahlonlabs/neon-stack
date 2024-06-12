@@ -46,14 +46,14 @@ test('onboarding with link', async ({ page, getOnboardingData }) => {
   await page.goto('/')
 
   await page.getByRole('link', { name: /log in/i }).click()
-  await expect(page).toHaveURL(`/login`)
+  await expect(page).toHaveURL('/login')
 
   const createAccountLink = page.getByRole('link', {
     name: /create an account/i,
   })
   await createAccountLink.click()
 
-  await expect(page).toHaveURL(`/signup`)
+  await expect(page).toHaveURL('/signup')
 
   const emailTextbox = page.getByRole('textbox', { name: /email/i })
   await emailTextbox.click()
@@ -81,7 +81,7 @@ test('onboarding with link', async ({ page, getOnboardingData }) => {
     .getByRole('button', { name: /submit/i })
     .click()
 
-  await expect(page).toHaveURL(`/onboarding`)
+  await expect(page).toHaveURL('/onboarding')
   await page
     .getByRole('textbox', { name: /^username/i })
     .fill(onboardingData.username)
@@ -98,7 +98,7 @@ test('onboarding with link', async ({ page, getOnboardingData }) => {
 
   await page.getByRole('button', { name: /Create an account/i }).click()
 
-  await expect(page).toHaveURL(`/`)
+  await expect(page).toHaveURL('/')
 
   await page.getByRole('link', { name: onboardingData.name }).click()
   await page.getByRole('menuitem', { name: /profile/i }).click()
@@ -107,7 +107,7 @@ test('onboarding with link', async ({ page, getOnboardingData }) => {
 
   await page.getByRole('link', { name: onboardingData.name }).click()
   await page.getByRole('menuitem', { name: /logout/i }).click()
-  await expect(page).toHaveURL(`/`)
+  await expect(page).toHaveURL('/')
 })
 
 test('onboarding with a short code', async ({ page, getOnboardingData }) => {
@@ -136,7 +136,7 @@ test('onboarding with a short code', async ({ page, getOnboardingData }) => {
   await page.getByRole('textbox', { name: /code/i }).fill(code)
   await page.getByRole('button', { name: /submit/i }).click()
 
-  await expect(page).toHaveURL(`/onboarding`)
+  await expect(page).toHaveURL('/onboarding')
 })
 
 test('completes onboarding after GitHub OAuth given valid user details', async ({
@@ -221,7 +221,7 @@ test('logs user in after GitHub OAuth if they are already registered', async ({
   await page.goto('/signup')
   await page.getByRole('button', { name: /signup with github/i }).click()
 
-  await expect(page).toHaveURL(`/`)
+  await expect(page).toHaveURL('/')
   await expect(
     page.getByText(
       new RegExp(
@@ -332,7 +332,7 @@ test('login as existing user', async ({ page, insertNewUser }) => {
   await page.getByRole('textbox', { name: /username/i }).fill(user.username)
   await page.getByLabel(/^password$/i).fill(password)
   await page.getByRole('button', { name: /log in/i }).click()
-  await expect(page).toHaveURL(`/`)
+  await expect(page).toHaveURL('/')
 
   await expect(page.getByRole('link', { name: user.name })).toBeVisible()
 })
@@ -372,7 +372,7 @@ test('reset password with a link', async ({ page, insertNewUser }) => {
     .getByRole('button', { name: /submit/i })
     .click()
 
-  await expect(page).toHaveURL(`/reset-password`)
+  await expect(page).toHaveURL('/reset-password')
   const newPassword = faker.internet.password()
   await page.getByLabel(/^new password$/i).fill(newPassword)
   await page.getByLabel(/^confirm password$/i).fill(newPassword)
@@ -392,7 +392,7 @@ test('reset password with a link', async ({ page, insertNewUser }) => {
   await page.getByLabel(/^password$/i).fill(newPassword)
   await page.getByRole('button', { name: /log in/i }).click()
 
-  await expect(page).toHaveURL(`/`)
+  await expect(page).toHaveURL('/')
 
   await expect(page.getByRole('link', { name: user.name })).toBeVisible()
 })
@@ -425,5 +425,5 @@ test('reset password with a short code', async ({ page, insertNewUser }) => {
   await page.getByRole('textbox', { name: /code/i }).fill(code)
   await page.getByRole('button', { name: /submit/i }).click()
 
-  await expect(page).toHaveURL(`/reset-password`)
+  await expect(page).toHaveURL('/reset-password')
 })

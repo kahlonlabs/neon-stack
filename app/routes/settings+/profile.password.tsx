@@ -108,7 +108,7 @@ export async function action({ request }: ActionFunctionArgs) {
   })
 
   return redirectWithToast(
-    `/settings/profile`,
+    '/settings/profile',
     {
       type: 'success',
       title: 'Password Changed',

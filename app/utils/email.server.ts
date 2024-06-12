@@ -43,9 +43,9 @@ export async function sendEmail({
   if (!process.env.RESEND_API_KEY && !process.env.MOCKS) {
     console.error(`RESEND_API_KEY not set and we're not in mocks mode.`)
     console.error(
-      `To send emails, set the RESEND_API_KEY environment variable.`,
+      'To send emails, set the RESEND_API_KEY environment variable.',
     )
-    console.error(`Would have sent the following email:`, JSON.stringify(email))
+    console.error('Would have sent the following email:', JSON.stringify(email))
     return {
       status: 'success',
       data: { id: 'mocked' },

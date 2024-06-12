@@ -70,7 +70,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
   const response = await sendEmail({
     to: user.email,
-    subject: `Epic Notes Password Reset`,
+    subject: 'Epic Notes Password Reset',
     react: (
       <ForgotPasswordEmail onboardingUrl={verifyUrl.toString()} otp={otp} />
     ),

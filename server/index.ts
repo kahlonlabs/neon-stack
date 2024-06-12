@@ -241,7 +241,7 @@ const server = app.listen(portToUse, () => {
       ),
     )
   }
-  console.log(`🚀  We have liftoff!`)
+  console.log('🚀  We have liftoff!')
   const localUrl = `http://localhost:${portToUse}`
   let lanUrl: string | null = null
   const localIp = ipAddress() ?? 'Unknown'
