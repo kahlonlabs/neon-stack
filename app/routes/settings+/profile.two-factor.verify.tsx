@@ -1,6 +1,6 @@
 import { getFormProps, getInputProps, useForm } from '@conform-to/react'
 import { getZodConstraint, parseWithZod } from '@conform-to/zod'
-import { type SEOHandle } from '@nasa-gcn/remix-seo'
+import type { SEOHandle } from '@nasa-gcn/remix-seo'
 import {
   type ActionFunctionArgs,
   type LoaderFunctionArgs,
@@ -24,7 +24,7 @@ import { prisma } from '#app/utils/db.server.ts'
 import { getDomainUrl, useIsPending } from '#app/utils/misc.tsx'
 import { redirectWithToast } from '#app/utils/toast.server.ts'
 import { getTOTPAuthUri } from '#app/utils/totp.server.ts'
-import { type BreadcrumbHandle } from './profile.tsx'
+import type { BreadcrumbHandle } from './profile.tsx'
 import { twoFAVerificationType } from './profile.two-factor.tsx'
 
 export const handle: BreadcrumbHandle & SEOHandle = {

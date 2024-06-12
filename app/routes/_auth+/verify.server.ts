@@ -1,4 +1,4 @@
-import { type Submission } from '@conform-to/react'
+import type { Submission } from '@conform-to/react'
 import { parseWithZod } from '@conform-to/zod'
 import { json } from '@remix-run/node'
 import { z } from 'zod'
@@ -10,7 +10,7 @@ import { ensurePrimary } from '#app/utils/litefs.server.ts'
 import { getDomainUrl } from '#app/utils/misc.tsx'
 import { redirectWithToast } from '#app/utils/toast.server.ts'
 import { generateTOTP, verifyTOTP } from '#app/utils/totp.server.ts'
-import { type twoFAVerifyVerificationType } from '../settings+/profile.two-factor.verify.tsx'
+import type { twoFAVerifyVerificationType } from '../settings+/profile.two-factor.verify.tsx'
 import {
   handleVerification as handleLoginTwoFactorVerification,
   shouldRequestTwoFA,

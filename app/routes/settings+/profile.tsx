@@ -1,5 +1,5 @@
 import { invariantResponse } from '@epic-web/invariant'
-import { type SEOHandle } from '@nasa-gcn/remix-seo'
+import type { SEOHandle } from '@nasa-gcn/remix-seo'
 import { type LoaderFunctionArgs, json } from '@remix-run/node'
 import { Link, Outlet, useMatches } from '@remix-run/react'
 import { z } from 'zod'

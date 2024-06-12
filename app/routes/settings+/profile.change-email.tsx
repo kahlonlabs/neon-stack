@@ -1,6 +1,6 @@
 import { getFormProps, getInputProps, useForm } from '@conform-to/react'
 import { getZodConstraint, parseWithZod } from '@conform-to/zod'
-import { type SEOHandle } from '@nasa-gcn/remix-seo'
+import type { SEOHandle } from '@nasa-gcn/remix-seo'
 import {
   type ActionFunctionArgs,
   type LoaderFunctionArgs,
@@ -23,7 +23,7 @@ import { useIsPending } from '#app/utils/misc.tsx'
 import { EmailSchema } from '#app/utils/user-validation.ts'
 import { verifySessionStorage } from '#app/utils/verification.server.ts'
 import { EmailChangeEmail } from './profile.change-email.server.tsx'
-import { type BreadcrumbHandle } from './profile.tsx'
+import type { BreadcrumbHandle } from './profile.tsx'
 
 export const handle: BreadcrumbHandle & SEOHandle = {
   breadcrumb: <Icon name='envelope-closed'>Change Email</Icon>,

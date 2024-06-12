@@ -1,6 +1,6 @@
 import { getFormProps, getInputProps, useForm } from '@conform-to/react'
 import { getZodConstraint, parseWithZod } from '@conform-to/zod'
-import { type SEOHandle } from '@nasa-gcn/remix-seo'
+import type { SEOHandle } from '@nasa-gcn/remix-seo'
 import {
   type ActionFunctionArgs,
   type LoaderFunctionArgs,
@@ -16,7 +16,7 @@ import { getPasswordHash, requireUserId } from '#app/utils/auth.server.ts'
 import { prisma } from '#app/utils/db.server.ts'
 import { useIsPending } from '#app/utils/misc.tsx'
 import { PasswordAndConfirmPasswordSchema } from '#app/utils/user-validation.ts'
-import { type BreadcrumbHandle } from './profile.tsx'
+import type { BreadcrumbHandle } from './profile.tsx'
 
 export const handle: BreadcrumbHandle & SEOHandle = {
   breadcrumb: <Icon name='dots-horizontal'>Password</Icon>,

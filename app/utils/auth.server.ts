@@ -1,4 +1,4 @@
-import { type Connection, type Password, type User } from '@prisma/client'
+import type { Connection, Password, User } from '@prisma/client'
 import { redirect } from '@remix-run/node'
 import bcrypt from 'bcryptjs'
 import { Authenticator } from 'remix-auth'
@@ -6,7 +6,7 @@ import { safeRedirect } from 'remix-utils/safe-redirect'
 import { connectionSessionStorage, providers } from './connections.server.ts'
 import { prisma } from './db.server.ts'
 import { combineHeaders, downloadFile } from './misc.tsx'
-import { type ProviderUser } from './providers/provider.ts'
+import type { ProviderUser } from './providers/provider.ts'
 import { authSessionStorage } from './session.server.ts'
 
 export const SESSION_EXPIRATION_TIME = 1000 * 60 * 60 * 24 * 30

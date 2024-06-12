@@ -1,7 +1,7 @@
 import { getFormProps, getInputProps, useForm } from '@conform-to/react'
 import { getZodConstraint, parseWithZod } from '@conform-to/zod'
 import { invariantResponse } from '@epic-web/invariant'
-import { type SEOHandle } from '@nasa-gcn/remix-seo'
+import type { SEOHandle } from '@nasa-gcn/remix-seo'
 import {
   type ActionFunctionArgs,
   type LoaderFunctionArgs,
@@ -29,7 +29,7 @@ import {
   useDoubleCheck,
   useIsPending,
 } from '#app/utils/misc.tsx'
-import { type BreadcrumbHandle } from './profile.tsx'
+import type { BreadcrumbHandle } from './profile.tsx'
 
 export const handle: BreadcrumbHandle & SEOHandle = {
   breadcrumb: <Icon name='avatar'>Photo</Icon>,

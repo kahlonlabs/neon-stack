@@ -3,7 +3,7 @@ import { json, redirect } from '@remix-run/node'
 import { prisma } from '#app/utils/db.server.ts'
 import { verifySessionStorage } from '#app/utils/verification.server.ts'
 import { resetPasswordUsernameSessionKey } from './reset-password.tsx'
-import { type VerifyFunctionArgs } from './verify.server.ts'
+import type { VerifyFunctionArgs } from './verify.server.ts'
 
 export async function handleVerification({ submission }: VerifyFunctionArgs) {
   invariant(
