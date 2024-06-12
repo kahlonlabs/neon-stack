@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import * as fs from 'fs'
-import chalk from 'chalk'
+import { exit } from 'node:process'
+import { styleText } from 'node:util'
 import closeWithGrace from 'close-with-grace'
 import sourceMapSupport from 'source-map-support'
 
@@ -20,9 +21,10 @@ sourceMapSupport.install({
 
 closeWithGrace(async ({ err }) => {
 	if (err) {
-		console.error(chalk.red(err))
-		console.error(chalk.red(err.stack))
-		process.exit(1)
+		console.error(styleText('red', err.message))
+		console.error(styleText('red', String(err.stack)))
+
+		exit(1)
 	}
 })
 
