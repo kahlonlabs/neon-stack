@@ -1,17 +1,17 @@
 {
-	"include": ["**/*.ts", "**/*.tsx"],
-	"extends": ["@epic-web/config/typescript"],
-	"compilerOptions": {
-		"module": "es2022",
-		"moduleResolution": "bundler",
-		"paths": {
-			"#app/*": ["./app/*"],
-			"#tests/*": ["./tests/*"],
-			"@/icon-name": [
-				"./app/components/ui/icons/name.d.ts",
-				"./types/icon-name.d.ts"
-			]
-		},
-		"target": "es2022"
-	}
+  "include": ["**/*.ts", "**/*.tsx"],
+  "extends": ["@epic-web/config/typescript"],
+  "compilerOptions": {
+    "module": "es2022",
+    "moduleResolution": "bundler",
+    "paths": {
+      "#app/*": ["./app/*"],
+      "#tests/*": ["./tests/*"],
+      "@/icon-name": [
+        "./app/components/ui/icons/name.d.ts",
+        "./types/icon-name.d.ts"
+      ]
+    },
+    "target": "es2022"
+  }
 }
