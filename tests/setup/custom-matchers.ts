@@ -42,11 +42,12 @@ expect.extend({
       }
     }
 
-    function toUrl(s?: string | null) {
-      s ??= ''
-      return s.startsWith('http')
-        ? new URL(s)
-        : new URL(s, 'https://example.com')
+    function toUrl(maybeUrlString?: string | null) {
+      const stringUrl = maybeUrlString ?? ''
+
+      return stringUrl.startsWith('http')
+        ? new URL(stringUrl)
+        : new URL(stringUrl, 'https://example.com')
     }
 
     function urlsMatch(u1: URL, u2: URL) {

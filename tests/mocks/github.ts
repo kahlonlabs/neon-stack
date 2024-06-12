@@ -20,7 +20,7 @@ const githubUserFixturePath = path.join(
 
 await fsExtra.ensureDir(path.dirname(githubUserFixturePath))
 
-function createGitHubUser(code?: string | null) {
+function createGitHubUser(maybeCode?: string | null) {
   const createEmail = () => ({
     email: faker.internet.email(),
     verified: faker.datatype.boolean(),
@@ -49,7 +49,7 @@ function createGitHubUser(code?: string | null) {
     primaryEmail,
   ]
 
-  code ??= faker.string.uuid()
+  const code = maybeCode ?? faker.string.uuid()
   return {
     code,
     accessToken: `${code}_mock_access_token`,
