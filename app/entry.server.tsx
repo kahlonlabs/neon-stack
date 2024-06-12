@@ -1,5 +1,5 @@
 import { styleText } from 'node:util'
-import { PassThrough } from 'stream'
+import { PassThrough } from 'node:stream'
 import {
   type ActionFunctionArgs,
   type HandleDocumentRequestFunction,

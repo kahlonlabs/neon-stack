@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import * as fs from 'fs'
+import * as fs from 'node:fs'
 import { exit } from 'node:process'
 import { styleText } from 'node:util'
 import closeWithGrace from 'close-with-grace'

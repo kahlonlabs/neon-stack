@@ -1,4 +1,4 @@
-import crypto from 'crypto'
+import crypto from 'node:crypto'
 import { styleText } from 'node:util'
 import { createRequestHandler as _createRequestHandler } from '@remix-run/express'
 import { type ServerBuild, installGlobals } from '@remix-run/node'
