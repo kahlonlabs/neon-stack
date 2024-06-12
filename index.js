@@ -6,7 +6,7 @@ import closeWithGrace from 'close-with-grace'
 import sourceMapSupport from 'source-map-support'
 
 sourceMapSupport.install({
-  retrieveSourceMap: function (source) {
+  retrieveSourceMap: (source) => {
     // get source file without the `file://` prefix or `?t=...` suffix
     const match = source.match(/^file:\/\/(.*)\?t=[.\d]+$/)
     if (match) {

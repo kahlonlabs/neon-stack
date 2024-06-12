@@ -15,7 +15,7 @@ export function makeTimings(type: string, desc?: string) {
     [type]: [{ desc, start: performance.now() }],
   }
   Object.defineProperty(timings, 'toString', {
-    value: function () {
+    value: () => {
       return getServerTimeHeader(timings)
     },
     enumerable: false,
