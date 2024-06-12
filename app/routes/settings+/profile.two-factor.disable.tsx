@@ -1,8 +1,8 @@
 import { type SEOHandle } from '@nasa-gcn/remix-seo'
 import {
-  json,
-  type LoaderFunctionArgs,
   type ActionFunctionArgs,
+  type LoaderFunctionArgs,
+  json,
 } from '@remix-run/node'
 import { useFetcher } from '@remix-run/react'
 import { Icon } from '#app/components/ui/icon.tsx'

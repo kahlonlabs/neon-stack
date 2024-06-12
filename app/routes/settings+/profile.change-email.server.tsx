@@ -2,8 +2,8 @@ import { invariant } from '@epic-web/invariant'
 import * as E from '@react-email/components'
 import { json } from '@remix-run/node'
 import {
-  requireRecentVerification,
   type VerifyFunctionArgs,
+  requireRecentVerification,
 } from '#app/routes/_auth+/verify.server.ts'
 import { prisma } from '#app/utils/db.server.ts'
 import { sendEmail } from '#app/utils/email.server.ts'

@@ -2,16 +2,16 @@ import { getFormProps, useForm } from '@conform-to/react'
 import { parseWithZod } from '@conform-to/zod'
 import { invariantResponse } from '@epic-web/invariant'
 import {
-  json,
-  type LoaderFunctionArgs,
   type ActionFunctionArgs,
+  type LoaderFunctionArgs,
+  json,
 } from '@remix-run/node'
 import {
   Form,
   Link,
+  type MetaFunction,
   useActionData,
   useLoaderData,
-  type MetaFunction,
 } from '@remix-run/react'
 import { formatDistanceToNow } from 'date-fns'
 import { z } from 'zod'
@@ -26,7 +26,7 @@ import { prisma } from '#app/utils/db.server.ts'
 import { getNoteImgSrc, useIsPending } from '#app/utils/misc.tsx'
 import { requireUserWithPermission } from '#app/utils/permissions.server.ts'
 import { redirectWithToast } from '#app/utils/toast.server.ts'
-import { userHasPermission, useOptionalUser } from '#app/utils/user.ts'
+import { useOptionalUser, userHasPermission } from '#app/utils/user.ts'
 import { type loader as notesLoader } from './notes.tsx'
 
 export async function loader({ params }: LoaderFunctionArgs) {

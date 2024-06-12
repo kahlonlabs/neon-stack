@@ -1,14 +1,14 @@
 import fs from 'fs'
 import {
-  cachified as baseCachified,
-  verboseReporter,
-  mergeReporters,
+  type Cache,
   type CacheEntry,
   type Cache as CachifiedCache,
   type CachifiedOptions,
-  type Cache,
-  totalTtl,
   type CreateReporter,
+  cachified as baseCachified,
+  mergeReporters,
+  totalTtl,
+  verboseReporter,
 } from '@epic-web/cachified'
 import { remember } from '@epic-web/remember'
 import Database from 'better-sqlite3'
@@ -16,7 +16,7 @@ import { LRUCache } from 'lru-cache'
 import { z } from 'zod'
 import { updatePrimaryCacheValue } from '#app/routes/admin+/cache_.sqlite.server.ts'
 import { getInstanceInfo, getInstanceInfoSync } from './litefs.server.ts'
-import { cachifiedTimingReporter, type Timings } from './timing.server.ts'
+import { type Timings, cachifiedTimingReporter } from './timing.server.ts'
 
 const CACHE_DATABASE_PATH = process.env.CACHE_DATABASE_PATH
 

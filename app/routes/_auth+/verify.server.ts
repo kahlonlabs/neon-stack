@@ -18,12 +18,12 @@ import {
 import { handleVerification as handleOnboardingVerification } from './onboarding.server.ts'
 import { handleVerification as handleResetPasswordVerification } from './reset-password.server.ts'
 import {
+  type VerificationTypes,
   VerifySchema,
   codeQueryParam,
   redirectToQueryParam,
   targetQueryParam,
   typeQueryParam,
-  type VerificationTypes,
 } from './verify.tsx'
 
 export type VerifyFunctionArgs = {

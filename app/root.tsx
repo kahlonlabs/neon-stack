@@ -1,9 +1,9 @@
 import {
-  json,
-  type LoaderFunctionArgs,
   type HeadersFunction,
   type LinksFunction,
+  type LoaderFunctionArgs,
   type MetaFunction,
+  json,
 } from '@remix-run/node'
 import {
   Form,

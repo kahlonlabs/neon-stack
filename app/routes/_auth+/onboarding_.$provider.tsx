@@ -1,20 +1,20 @@
 import {
+  type SubmissionResult,
   getFormProps,
   getInputProps,
   useForm,
-  type SubmissionResult,
 } from '@conform-to/react'
 import { getZodConstraint, parseWithZod } from '@conform-to/zod'
 import {
-  redirect,
-  json,
   type ActionFunctionArgs,
   type LoaderFunctionArgs,
   type MetaFunction,
+  json,
+  redirect,
 } from '@remix-run/node'
 import {
-  type Params,
   Form,
+  type Params,
   useActionData,
   useLoaderData,
   useSearchParams,
@@ -26,9 +26,9 @@ import { Spacer } from '#app/components/spacer.tsx'
 import { StatusButton } from '#app/components/ui/status-button.tsx'
 import {
   authenticator,
+  requireAnonymous,
   sessionKey,
   signupWithConnection,
-  requireAnonymous,
 } from '#app/utils/auth.server.ts'
 import { connectionSessionStorage } from '#app/utils/connections.server'
 import { ProviderNameSchema } from '#app/utils/connections.tsx'

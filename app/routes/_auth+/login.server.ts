@@ -8,7 +8,7 @@ import { combineResponseInits } from '#app/utils/misc.tsx'
 import { authSessionStorage } from '#app/utils/session.server.ts'
 import { redirectWithToast } from '#app/utils/toast.server.ts'
 import { verifySessionStorage } from '#app/utils/verification.server.ts'
-import { getRedirectToUrl, type VerifyFunctionArgs } from './verify.server.ts'
+import { type VerifyFunctionArgs, getRedirectToUrl } from './verify.server.ts'
 
 const verifiedTimeKey = 'verified-time'
 const unverifiedSessionIdKey = 'unverified-session-id'
