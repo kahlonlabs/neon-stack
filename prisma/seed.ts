@@ -25,7 +25,7 @@ async function seed() {
   const actions = ['create', 'read', 'update', 'delete']
   const accesses = ['own', 'any'] as const
 
-  let permissionsToCreate = []
+  const permissionsToCreate = []
   for (const entity of entities) {
     for (const action of actions) {
       for (const access of accesses) {
