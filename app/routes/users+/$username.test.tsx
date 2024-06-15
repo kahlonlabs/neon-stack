@@ -32,7 +32,9 @@ test('The user profile when not logged in as self', async () => {
   const routeUrl = `/users/${user.username}`
   render(<App initialEntries={[routeUrl]} />)
 
+  // biome-ignore lint/style/noNonNullAssertion: this should be fine for tests
   await screen.findByRole('heading', { level: 1, name: user.name! })
+  // biome-ignore lint/style/noNonNullAssertion: this should be fine for tests
   await screen.findByRole('img', { name: user.name! })
   await screen.findByRole('link', { name: `${user.name}'s notes` })
 })
@@ -87,7 +89,9 @@ test('The user profile when logged in as self', async () => {
   const routeUrl = `/users/${user.username}`
   await render(<App initialEntries={[routeUrl]} />)
 
+  // biome-ignore lint/style/noNonNullAssertion: this should be fine for tests
   await screen.findByRole('heading', { level: 1, name: user.name! })
+  // biome-ignore lint/style/noNonNullAssertion: this should be fine for tests
   await screen.findByRole('img', { name: user.name! })
   await screen.findByRole('button', { name: /logout/i })
   await screen.findByRole('link', { name: /my notes/i })

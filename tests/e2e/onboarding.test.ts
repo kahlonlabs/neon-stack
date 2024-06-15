@@ -27,7 +27,7 @@ const test = base.extend<{
     password: string
   }
 }>({
-  getOnboardingData: async ({}, use) => {
+  getOnboardingData: async ({ }, use) => {
     const userData = createUser()
     await use(() => {
       const onboardingData = {
@@ -225,6 +225,7 @@ test('logs user in after GitHub OAuth if they are already registered', async ({
   await expect(
     page.getByText(
       new RegExp(
+        // biome-ignore lint/style/noNonNullAssertion: this should be fine for tests
         `your "${ghUser!.profile.login}" github account has been connected`,
         'i',
       ),

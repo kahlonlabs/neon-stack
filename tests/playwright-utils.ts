@@ -68,14 +68,14 @@ export const test = base.extend<{
   login(options?: GetOrInsertUserOptions): Promise<User>
   prepareGitHubUser(): Promise<GitHubUser>
 }>({
-  insertNewUser: async ({}, use) => {
+  insertNewUser: async ({ }, use) => {
     let userId: string | undefined = undefined
     await use(async (options) => {
       const user = await getOrInsertUser(options)
       userId = user.id
       return user
     })
-    await prisma.user.delete({ where: { id: userId } }).catch(() => {})
+    await prisma.user.delete({ where: { id: userId } }).catch(() => { })
   },
   login: async ({ page }, use) => {
     let userId: string | undefined = undefined
@@ -113,6 +113,7 @@ export const test = base.extend<{
 
     let ghUser: GitHubUser | null = null
     await use(async () => {
+      // biome-ignore lint/style/noNonNullAssertion: this should be fine for tests
       const newGitHubUser = await insertGitHubUser(testInfo.testId)!
       ghUser = newGitHubUser
       return newGitHubUser
@@ -120,10 +121,12 @@ export const test = base.extend<{
 
     const user = await prisma.user.findUniqueOrThrow({
       select: { id: true, name: true },
+      // biome-ignore lint/style/noNonNullAssertion: this should be fine for tests
       where: { email: normalizeEmail(ghUser!.primaryEmail) },
     })
     await prisma.user.delete({ where: { id: user.id } })
     await prisma.session.deleteMany({ where: { userId: user.id } })
+    // biome-ignore lint/style/noNonNullAssertion: this should be fine for tests
     await deleteGitHubUser(ghUser!.primaryEmail)
   },
 })
