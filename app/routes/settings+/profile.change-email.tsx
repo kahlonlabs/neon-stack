@@ -96,12 +96,11 @@ export async function action({ request }: ActionFunctionArgs) {
         'set-cookie': await verifySessionStorage.commitSession(verifySession),
       },
     })
-  } else {
-    return json(
-      { result: submission.reply({ formErrors: [response.error.message] }) },
-      { status: 500 },
-    )
   }
+  return json(
+    { result: submission.reply({ formErrors: [response.error.message] }) },
+    { status: 500 },
+  )
 }
 
 export default function ChangeEmailIndex() {

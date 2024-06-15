@@ -81,9 +81,8 @@ export function getReferrerRoute(request: Request) {
   const domain = getDomainUrl(request)
   if (referrer?.startsWith(domain)) {
     return referrer.slice(domain.length)
-  } else {
-    return '/'
   }
+  return '/'
 }
 
 /**

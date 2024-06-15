@@ -286,11 +286,10 @@ async function ensureLoggedIn() {
         return null
       }
     }
-  } else {
-    console.log('You need to login to Fly first. Running `fly auth login`...')
-    await $({ stdio: 'inherit' })`fly auth login`
-    return ensureLoggedIn()
   }
+  console.log('You need to login to Fly first. Running `fly auth login`...')
+  await $({ stdio: 'inherit' })`fly auth login`
+  return ensureLoggedIn()
 }
 
 async function getPreferredRegion() {

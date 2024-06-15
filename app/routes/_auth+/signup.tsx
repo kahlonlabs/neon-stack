@@ -72,16 +72,15 @@ export async function action({ request }: ActionFunctionArgs) {
 
   if (response.status === 'success') {
     return redirect(redirectTo.toString())
-  } else {
-    return json(
-      {
-        result: submission.reply({ formErrors: [response.error.message] }),
-      },
-      {
-        status: 500,
-      },
-    )
   }
+  return json(
+    {
+      result: submission.reply({ formErrors: [response.error.message] }),
+    },
+    {
+      status: 500,
+    },
+  )
 }
 
 export function SignupEmail({

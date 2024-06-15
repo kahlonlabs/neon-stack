@@ -31,9 +31,8 @@ export async function action({ request }: ActionFunctionArgs) {
   }
   if (redirectTo) {
     return redirect(redirectTo, responseInit)
-  } else {
-    return json({ result: submission.reply() }, responseInit)
   }
+  return json({ result: submission.reply() }, responseInit)
 }
 
 export function ThemeSwitch({

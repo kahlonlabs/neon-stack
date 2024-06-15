@@ -77,16 +77,15 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
         },
         { headers: destroyRedirectTo },
       )
-    } else {
-      return redirectWithToast(
-        '/settings/profile/connections',
-        {
-          title: 'Already Connected',
-          description: `The "${profile.username}" ${label} account is already connected to another account.`,
-        },
-        { headers: destroyRedirectTo },
-      )
     }
+    return redirectWithToast(
+      '/settings/profile/connections',
+      {
+        title: 'Already Connected',
+        description: `The "${profile.username}" ${label} account is already connected to another account.`,
+      },
+      { headers: destroyRedirectTo },
+    )
   }
 
   // If we're already logged in, then link the account

@@ -62,11 +62,10 @@ export async function action({ request }: ActionFunctionArgs) {
                 contentType: i.file.type,
                 blob: Buffer.from(await i.file.arrayBuffer()),
               }
-            } else {
-              return {
-                id: i.id,
-                altText: i.altText,
-              }
+            }
+            return {
+              id: i.id,
+              altText: i.altText,
             }
           }),
         ),

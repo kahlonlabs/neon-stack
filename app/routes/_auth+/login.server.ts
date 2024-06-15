@@ -58,26 +58,25 @@ export async function handleNewSession(
         responseInit,
       ),
     )
-  } else {
-    const authSession = await authSessionStorage.getSession(
-      request.headers.get('cookie'),
-    )
-    authSession.set(sessionKey, session.id)
-
-    return redirect(
-      safeRedirect(redirectTo),
-      combineResponseInits(
-        {
-          headers: {
-            'set-cookie': await authSessionStorage.commitSession(authSession, {
-              expires: remember ? session.expirationDate : undefined,
-            }),
-          },
-        },
-        responseInit,
-      ),
-    )
   }
+  const authSession = await authSessionStorage.getSession(
+    request.headers.get('cookie'),
+  )
+  authSession.set(sessionKey, session.id)
+
+  return redirect(
+    safeRedirect(redirectTo),
+    combineResponseInits(
+      {
+        headers: {
+          'set-cookie': await authSessionStorage.commitSession(authSession, {
+            expires: remember ? session.expirationDate : undefined,
+          }),
+        },
+      },
+      responseInit,
+    ),
+  )
 }
 
 export async function handleVerification({

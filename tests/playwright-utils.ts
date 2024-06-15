@@ -46,22 +46,21 @@ async function getOrInsertUser({
       select,
       where: { id: id },
     })
-  } else {
-    const userData = createUser()
-    username ??= userData.username
-    password ??= userData.username
-    email ??= userData.email
-    return await prisma.user.create({
-      select,
-      data: {
-        ...userData,
-        email,
-        username,
-        roles: { connect: { name: 'user' } },
-        password: { create: { hash: await getPasswordHash(password) } },
-      },
-    })
   }
+  const userData = createUser()
+  username ??= userData.username
+  password ??= userData.username
+  email ??= userData.email
+  return await prisma.user.create({
+    select,
+    data: {
+      ...userData,
+      email,
+      username,
+      roles: { connect: { name: 'user' } },
+      password: { create: { hash: await getPasswordHash(password) } },
+    },
+  })
 }
 
 export const test = base.extend<{
