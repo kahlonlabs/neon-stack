@@ -27,7 +27,8 @@ const test = base.extend<{
     password: string
   }
 }>({
-  getOnboardingData: async ({ }, use) => {
+  // biome-ignore lint/correctness/noEmptyPattern: playwright extensions requires an empty object as the first argument
+  getOnboardingData: async ({}, use) => {
     const userData = createUser()
     await use(() => {
       const onboardingData = {

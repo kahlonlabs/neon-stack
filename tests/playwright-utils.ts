@@ -68,7 +68,8 @@ export const test = base.extend<{
   login(options?: GetOrInsertUserOptions): Promise<User>
   prepareGitHubUser(): Promise<GitHubUser>
 }>({
-  insertNewUser: async ({ }, use) => {
+  // biome-ignore lint/correctness/noEmptyPattern: playwright extensions requires an empty object as the first argument
+  insertNewUser: async ({}, use) => {
     let userId: string | undefined = undefined
     await use(async (options) => {
       const user = await getOrInsertUser(options)
