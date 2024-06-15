@@ -6,7 +6,7 @@ import * as Sentry from '@sentry/remix'
 import { ip as ipAddress } from 'address'
 import closeWithGrace from 'close-with-grace'
 import compression from 'compression'
-import express from 'express'
+import { default as express, type Request, type Response } from 'express'
 import rateLimit from 'express-rate-limit'
 import getPort, { portNumbers } from 'get-port'
 import helmet from 'helmet'
@@ -213,7 +213,7 @@ if (!ALLOW_INDEXING) {
 app.all(
   '*',
   createRequestHandler({
-    getLoadContext: (_: any, res: any) => ({
+    getLoadContext: (_: Request, res: Response) => ({
       cspNonce: res.locals.cspNonce,
       serverBuild: getBuild(),
     }),

@@ -16,6 +16,7 @@ import {
   deleteGitHubUser,
   insertGitHubUser,
 } from './mocks/github.ts'
+import type { TODO } from '#app/todo.ts'
 
 export * from './db-utils.ts'
 
@@ -94,7 +95,7 @@ export const test = base.extend<{
       authSession.set(sessionKey, session.id)
       const cookieConfig = setCookieParser.parseString(
         await authSessionStorage.commitSession(authSession),
-      ) as any
+      ) as TODO
       await page
         .context()
         .addCookies([{ ...cookieConfig, domain: 'localhost' }])

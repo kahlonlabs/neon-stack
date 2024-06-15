@@ -1,3 +1,4 @@
+import type { TODO } from '#app/todo.ts'
 import {
   getInstanceInfo,
   getInternalInstanceDomain,
@@ -8,7 +9,7 @@ export async function updatePrimaryCacheValue({
   cacheValue,
 }: {
   key: string
-  cacheValue: any
+  cacheValue: TODO
 }) {
   const { currentIsPrimary, primaryInstance } = await getInstanceInfo()
   if (currentIsPrimary) {
