@@ -59,7 +59,7 @@ export const lruCache = {
   set: (key, value) => {
     const ttl = totalTtl(value?.metadata)
     lru.set(key, value, {
-      ttl: ttl === Infinity ? undefined : ttl,
+      ttl: ttl === Number.POSITIVE_INFINITY ? undefined : ttl,
       start: value?.metadata?.createdTime,
     })
     return value
