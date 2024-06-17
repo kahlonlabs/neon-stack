@@ -191,7 +191,11 @@ export function useDelayedIsPending({
 function callAll<Args extends Array<unknown>>(
   ...fns: Array<((...args: Args) => unknown) | undefined>
 ) {
-  return (...args: Args) => fns.forEach((fn) => fn?.(...args))
+  return (...args: Args) => {
+    for (const fn of fns) {
+      fn?.(...args)
+    }
+  }
 }
 
 /**
