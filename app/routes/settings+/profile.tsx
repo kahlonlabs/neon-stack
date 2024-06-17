@@ -61,7 +61,7 @@ export default function EditUserProfile() {
           </li>
           {breadcrumbs.map((breadcrumb, i, arr) => (
             <li
-              key={i}
+              key={breadcrumb.key}
               className={cn('flex items-center gap-3', {
                 'text-muted-foreground': i < arr.length - 1,
               })}
