@@ -196,7 +196,7 @@ export const meta: MetaFunction<
   const noteTitle = data?.note.title ?? 'Note'
   const noteContentsSummary =
     data && data.note.content.length > 100
-      ? data?.note.content.slice(0, 97) + '...'
+      ? `${data.note.content.slice(0, 97)}...`
       : 'No content'
   return [
     { title: `${noteTitle} | ${displayName}'s Notes | Epic Notes` },

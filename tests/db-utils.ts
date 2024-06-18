@@ -12,14 +12,7 @@ export function createUser() {
 
   const username = uniqueUsernameEnforcer
     .enforce(() => {
-      return (
-        faker.string.alphanumeric({ length: 2 }) +
-        '_' +
-        faker.internet.userName({
-          firstName: firstName.toLowerCase(),
-          lastName: lastName.toLowerCase(),
-        })
-      )
+      return `${faker.string.alphanumeric({ length: 2 })}_${faker.internet.userName({ firstName: firstName.toLowerCase(), lastName: lastName.toLowerCase() })}`
     })
     .slice(0, 20)
     .toLowerCase()
