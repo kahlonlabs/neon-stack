@@ -178,6 +178,8 @@ function Document({
         {children}
         <script
           nonce={nonce}
+          // TODO(kinggoesgaming): find alternative to this
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: this is fine for now
           dangerouslySetInnerHTML={{
             __html: `window.ENV = ${JSON.stringify(env)}`,
           }}

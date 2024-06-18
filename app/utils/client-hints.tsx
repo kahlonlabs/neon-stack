@@ -43,6 +43,8 @@ export function ClientHintCheck({ nonce }: { nonce: string }) {
   return (
     <script
       nonce={nonce}
+      // TODO(kinggoesgaming): find alternative to this
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: this is fine for now
       dangerouslySetInnerHTML={{
         __html: hintsUtils.getClientHintCheckScript(),
       }}
