@@ -4,7 +4,7 @@ import { cn } from '#app/utils/misc.tsx'
 import href from './icons/sprite.svg'
 
 export { href }
-export { IconName }
+export type { IconName }
 
 const sizeClassName = {
   font: 'w-[1em] h-[1em]',
