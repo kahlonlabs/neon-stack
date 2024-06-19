@@ -68,13 +68,13 @@ export function Icon({
   return (
     <>
       {/* biome-ignore lint/a11y/noSvgWithoutTitle: this is handled */}
-    <svg
-      {...props}
-      className={cn(sizeClassName[size], 'inline self-center', className)}
-    >
-      {title ? <title>{title}</title> : null}
-      <use href={`${href}#${name}`} />
-    </svg>
-  </>
+      <svg
+        {...props}
+        className={cn(sizeClassName[size], 'inline self-center', className)}
+      >
+        {title ? <title>{title}</title> : null}
+        <use href={`${href}#${name}`} />
+      </svg>
+    </>
   )
 }

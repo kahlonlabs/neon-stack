@@ -76,7 +76,7 @@ export const test = base.extend<{
       userId = user.id
       return user
     })
-    await prisma.user.delete({ where: { id: userId } }).catch(() => { })
+    await prisma.user.delete({ where: { id: userId } }).catch(() => {})
   },
   login: async ({ page }, use) => {
     let userId: string | undefined = undefined

@@ -65,7 +65,8 @@ expect.extend({
 
     return {
       pass:
-        location === redirectTo || urlsMatch(toUrl(location), toUrl(redirectTo)),
+        location === redirectTo ||
+        urlsMatch(toUrl(location), toUrl(redirectTo)),
       message: () =>
         `Expected response to ${
           this.isNot ? 'not ' : ''
