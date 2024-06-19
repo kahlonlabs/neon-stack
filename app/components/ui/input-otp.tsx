@@ -61,6 +61,7 @@ const InputOTPSeparator = React.forwardRef<
   React.ElementRef<'div'>,
   React.ComponentPropsWithoutRef<'div'>
 >(({ ...props }, ref) => (
+  // biome-ignore lint/a11y/useAriaPropsForRole: aria-value{max,min,now} are not needed as the separator is not focusable
   <div ref={ref} role='separator' {...props}>
     -
   </div>
