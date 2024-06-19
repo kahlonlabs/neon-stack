@@ -104,7 +104,7 @@ export function useOptimisticThemeMode() {
     (f) => f.formAction === '/resources/theme-switch',
   )
 
-  if (themeFetcher && themeFetcher.formData) {
+  if (themeFetcher?.formData) {
     const submission = parseWithZod(themeFetcher.formData, {
       schema: ThemeFormSchema,
     })
