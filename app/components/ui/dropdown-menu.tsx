@@ -106,6 +106,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
       <DropdownMenuPrimitive.ItemIndicator>
         <span className='h-4 w-4'>
           <svg viewBox='0 0 8 8'>
+            <title>Item Indicator</title>
             <path
               d='M1,4 L3,6 L7,2'
               stroke='black'
