@@ -1,6 +1,7 @@
 import { test as base } from '@playwright/test'
 import type { User as UserModel } from '@prisma/client'
 import * as setCookieParser from 'set-cookie-parser'
+import type { TODO } from '#app/todo.ts'
 import {
   getPasswordHash,
   getSessionExpirationDate,
@@ -16,7 +17,6 @@ import {
   deleteGitHubUser,
   insertGitHubUser,
 } from './mocks/github.ts'
-import type { TODO } from '#app/todo.ts'
 
 export * from './db-utils.ts'
 
