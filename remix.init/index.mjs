@@ -52,8 +52,8 @@ export default async function main({ rootDirectory }) {
   const packageJson = JSON.parse(packageJsonString)
 
   packageJson.name = APP_NAME
-  delete packageJson.author
-  delete packageJson.license
+  packageJson.author = undefined
+  packageJson.license = undefined
 
   const fileOperationPromises = [
     fs.writeFile(FLY_TOML_PATH, newFlyTomlContent),
