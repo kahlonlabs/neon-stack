@@ -5,7 +5,7 @@ import '#app/utils/env.server.ts'
 
 import { installGlobals } from '@remix-run/node'
 import { cleanup } from '@testing-library/react'
-import { afterEach, beforeEach, vi, type MockInstance } from 'vitest'
+import { type MockInstance, afterEach, beforeEach, vi } from 'vitest'
 import { server } from '#tests/mocks/index.ts'
 import './custom-matchers.ts'
 
@@ -17,14 +17,14 @@ afterEach(() => cleanup())
 export let consoleError: MockInstance<Parameters<(typeof console)['error']>>
 
 beforeEach(() => {
-	const originalConsoleError = console.error
-	consoleError = vi.spyOn(console, 'error')
-	consoleError.mockImplementation(
-		(...args: Parameters<typeof console.error>) => {
-			originalConsoleError(...args)
-			throw new Error(
-				'Console error was called. Call consoleError.mockImplementation(() => {}) if this is expected.',
-			)
-		},
-	)
+  const originalConsoleError = console.error
+  consoleError = vi.spyOn(console, 'error')
+  consoleError.mockImplementation(
+    (...args: Parameters<typeof console.error>) => {
+      originalConsoleError(...args)
+      throw new Error(
+        'Console error was called. Call consoleError.mockImplementation(() => {}) if this is expected.',
+      )
+    },
+  )
 })

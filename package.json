@@ -106,6 +106,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.8.1",
     "@epic-web/config": "^1.10.0",
     "@faker-js/faker": "^8.4.1",
     "@playwright/test": "^1.44.1",
