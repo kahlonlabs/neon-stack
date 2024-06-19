@@ -38,24 +38,24 @@ export default function Index() {
           >
             <svg
               // TODO(kinggoesgaming): figure this out
+              aria-hidden='true'
               className='size-20 text-foreground xl:-mt-4'
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
               viewBox='0 0 65 65'
             >
-              <title>Epic Stack logo</title>
               <path
                 fill='currentColor'
                 d='M39.445 25.555 37 17.163 65 0 47.821 28l-8.376-2.445Zm-13.89 0L28 17.163 0 0l17.179 28 8.376-2.445Zm13.89 13.89L37 47.837 65 65 47.821 37l-8.376 2.445Zm-13.89 0L28 47.837 0 65l17.179-28 8.376 2.445Z'
               />
             </svg>
+            <h1
+              data-heading
+              className='mt-8 animate-slide-top text-4xl font-medium text-foreground [animation-delay:0.3s] [animation-fill-mode:backwards] md:text-5xl xl:mt-4 xl:animate-slide-left xl:text-6xl xl:[animation-delay:0.8s] xl:[animation-fill-mode:backwards]'
+            >
+              The Epic Stack
+            </h1>
           </a>
-          <h1
-            data-heading
-            className='mt-8 animate-slide-top text-4xl font-medium text-foreground [animation-delay:0.3s] [animation-fill-mode:backwards] md:text-5xl xl:mt-4 xl:animate-slide-left xl:text-6xl xl:[animation-delay:0.8s] xl:[animation-fill-mode:backwards]'
-          >
-            <a href='https://www.epicweb.dev/stack'>The Epic Stack</a>
-          </h1>
           <p
             data-paragraph
             className='mt-6 animate-slide-top text-xl/7 text-muted-foreground [animation-delay:0.8s] [animation-fill-mode:backwards] xl:mt-8 xl:animate-slide-left xl:text-xl/6 xl:leading-10 xl:[animation-delay:1s] xl:[animation-fill-mode:backwards]'
