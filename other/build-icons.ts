@@ -132,7 +132,7 @@ async function generateSvgSprite({
     files.map(async (file) => {
       const input = await readFile(join(inputDir, file), 'utf8')
       const transformed = rewriter.transform(new Response(input))
-      return transformed
+      return transformed.text()
     }),
   )
 
