@@ -1,12 +1,31 @@
 {
-  "include": ["**/*.ts", "**/*.tsx"],
-  "extends": ["@epic-web/config/typescript"],
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "checkJs": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
     "module": "es2022",
     "moduleResolution": "bundler",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "allowJs": true,
+    "noUncheckedIndexedAccess": true,
     "paths": {
       "#*": ["./*"]
     },
+    "skipLibCheck": true,
+    "strict": true,
     "target": "es2022"
-  }
+  },
+  "exclude": ["server/index.ts"],
+  "include": [
+    "./**/*.ts",
+    "app/**/*.ts",
+    "tests/**/*.ts",
+    "app/**/*.tsx",
+    "other/**/*.ts",
+    "tests/**/*.tsx",
+    "types/**/*.ts"
+  ]
 }
