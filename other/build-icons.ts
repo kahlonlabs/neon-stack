@@ -154,6 +154,6 @@ async function writeIfChanged(filepath: string, newContent: string) {
   const currentContent = await readFile(filepath, 'utf8').catch(() => '')
   if (currentContent === newContent) return false
   await writeFile(filepath, newContent, 'utf8')
-  await $`biome check --write ${filepath} --ignore-unknown`
+  await $`biome check --write ${filepath}`
   return true
 }
