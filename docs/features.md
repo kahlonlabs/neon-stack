@@ -33,7 +33,7 @@ Here are a few things you get today:
 - Unit testing with [Vitest](https://vitest.dev/) and
   [Testing Library](https://testing-library.com/) with pre-configured Test
   Database
-- Code formatting with [Prettier](https://prettier.io/)
+- Code formatting with [Biome](https://biomejs.dev/)
 - Linting with [ESLint](https://eslint.org/)
 - Static Types with [TypeScript](https://typescriptlang.org/)
 - Runtime schema validation with [zod](https://zod.dev/)
