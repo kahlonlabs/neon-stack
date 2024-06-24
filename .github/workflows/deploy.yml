@@ -34,7 +34,7 @@ jobs:
         run: npm run build:icons
 
       - name: 🔬 Lint
-        run: node --run biome ci .
+        run: npm run biome ci .
 
   typecheck:
     name: ʦ TypeScript
