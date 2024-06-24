@@ -5,7 +5,6 @@ import fly from './fly.svg'
 import github from './github.svg'
 import msw from './msw.svg'
 import playwright from './playwright.svg'
-import prettier from './prettier.svg'
 import prisma from './prisma.svg'
 import radixUI from './radix.svg'
 import reactEmail from './react-email.svg'
@@ -148,13 +147,6 @@ export const logos = [
     href: 'https://typescriptlang.org',
     column: 5,
     row: 2,
-  },
-  {
-    src: prettier,
-    alt: 'Prettier',
-    href: 'https://prettier.io',
-    column: 5,
-    row: 3,
   },
   {
     src: eslint,
