@@ -22,9 +22,9 @@ at the end of the day, we're using TypeScript which will prevent us from making
 mistakes and modern editors will automatically handle imports for you anyway.
 
 At first it may feel like a pain, but less tooling magic is better and editors
-can really help reduce the pain. Additionally, we have ESLint configured to sort
+can really help reduce the pain. Additionally, we have Biome configured to sort
 imports for us so we don't have to worry about that either. Just let the editor
-update the imports and let ESLint sort them.
+update the imports and let Biome sort them.
 
 ## Decision
 

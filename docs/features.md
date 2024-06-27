@@ -34,7 +34,7 @@ Here are a few things you get today:
   [Testing Library](https://testing-library.com/) with pre-configured Test
   Database
 - Code formatting with [Biome](https://biomejs.dev/)
-- Linting with [ESLint](https://eslint.org/)
+- Linting with [Biome](https://biomejs.dev/)
 - Static Types with [TypeScript](https://typescriptlang.org/)
 - Runtime schema validation with [zod](https://zod.dev/)
 - Error monitoring with [Sentry](https://sentry.io/welcome/)
