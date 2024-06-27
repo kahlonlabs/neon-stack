@@ -1,5 +1,4 @@
 import docker from './docker.svg'
-import eslint from './eslint.svg'
 import fakerJS from './faker.svg'
 import fly from './fly.svg'
 import github from './github.svg'
@@ -147,13 +146,6 @@ export const logos = [
     href: 'https://typescriptlang.org',
     column: 5,
     row: 2,
-  },
-  {
-    src: eslint,
-    alt: 'ESLint',
-    href: 'https://eslint.org',
-    column: 5,
-    row: 4,
   },
   {
     src: sentry,
