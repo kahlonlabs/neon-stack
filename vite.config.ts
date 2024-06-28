@@ -29,6 +29,9 @@ export default defineConfig({
   },
   plugins: [
     remix({
+      future: {
+        unstable_fogOfWar: true,
+      },
       ignoredRouteFiles: ['**/*'],
       serverModuleFormat: 'esm',
       routes: async (defineRoutes) => {
