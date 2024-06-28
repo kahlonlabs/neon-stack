@@ -12,7 +12,9 @@ import getPort, { portNumbers } from 'get-port'
 import helmet from 'helmet'
 import morgan from 'morgan'
 
-installGlobals()
+installGlobals({
+  nativeFetch: true,
+})
 
 const MODE = process.env.NODE_ENV ?? 'development'
 const IS_PROD = MODE === 'production'

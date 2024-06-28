@@ -9,7 +9,9 @@ import { type MockInstance, afterEach, beforeEach, vi } from 'vitest'
 import { server } from '#tests/mocks/index.ts'
 import './custom-matchers.ts'
 
-installGlobals()
+installGlobals({
+  nativeFetch: true,
+})
 
 afterEach(() => server.resetHandlers())
 afterEach(() => cleanup())
